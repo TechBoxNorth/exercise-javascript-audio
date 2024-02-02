@@ -16,7 +16,11 @@ for(let i = 0; i < songObjects.length; i++){
 }
 
 libraryList.addEventListener('click', (e) => {
-    console.log(e.target.closest('.library-item').id);
+    if(!e.target.classList.contains('add-to-playlist')){
+        const songId = e.target.closest('.library-item').id;
+        audioPlayer.src = songObjects[songId].song;
+        audioPlayer.play();
+    }
 });
 
 // --------------------------------------------------

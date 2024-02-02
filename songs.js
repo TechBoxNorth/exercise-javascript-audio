@@ -26,7 +26,7 @@
         name: 'Peyote',
         artist: 'Kinematic',
         cover: 'assets/Peyote_-_Kinematic.jpg',
-        dong: 'assets/Peyote_-_Kinematic.mp3'
+        song: 'assets/Peyote_-_Kinematic.mp3'
     },
     {
         id: 5,
