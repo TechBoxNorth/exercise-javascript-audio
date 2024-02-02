@@ -1,27 +1,23 @@
-let playList = [];
-let songObjects = [];
-function createSongObject(name, song, cover, artist){
-    obj = {
-        name: name,
-        song: song,
-        cover: cover,
-        artist: artist
-    }
-    songObjects.push(obj);
-}
-
-createSongObject('Boys, Girls, Toys & Words', 'assets/Boys,_Girls,_Toys_&_Words_-_Modern_Pitch.mp3', 'assets/Boys,_Girls,_Toys_&_Words_-_Modern_Pitch.jpg', 'Modern Pitch');
-
+const audioPlayer = document.querySelector('.audio-player');
+const libraryList = document.querySelector('.library-list');
+// ------- create song library ---------------------
 function createLibraryListItem(i){
-    const libraryList = document.querySelector('.library-list');
     let item = document.createElement('li');
     item.classList.add('library-item');
-    item.innerHTML = `<img src="${songObjects[i].cover}" alt="">
+    item.innerHTML = `<img class="library-art" src="${songObjects[i].cover}" alt="">
     <p>Song: ${songObjects[i].name}</p>
-    <p>Artist: ${songObjects[i].artist}</p>`;
+    <p>Artist: ${songObjects[i].artist}</p><img class="add-to-playlist" src="assets/gui/playlist_add.svg" alt="">`;
+    item.id = songObjects[i].id;
     libraryList.appendChild(item);
 }
-createLibraryListItem(0);
 
+for(let i = 0; i < songObjects.length; i++){
+    createLibraryListItem(i);
+}
 
-console.log(songObjects[0]);
+libraryList.addEventListener('click', (e) => {
+    console.log(e.target.closest('.library-item').id);
+});
+
+// --------------------------------------------------
+
