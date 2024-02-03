@@ -4,6 +4,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.player {
+    width: 90%;
+    background-color: grey;
+    color: white;
+}
+
 .app-container {
     width: 100%;
     max-width: 700px;
