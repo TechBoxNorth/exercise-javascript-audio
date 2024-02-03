@@ -4,22 +4,63 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.player {
-    width: 90%;
-    background-color: grey;
-    color: white;
-}
-
 .app-container {
     width: 100%;
     max-width: 700px;
     margin: auto;
     margin-top: 30px;
-    background: linear-gradient(45deg, orange, yellow);
+    background: black;
     border-radius: 18px;
+    padding: 32px 0;
+}
+
+header {
+    background-color: aqua;
+    height: 48px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.player {
+    display: inherit ;
+    margin: auto;
+    width: 90%;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding: 32px;
+}
+
+.player-controls {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(2, 50%);
+    background-color: yellow;
+}
+
+.player-controls img {
+    margin: auto;
+}
+
+.play-btn {
+    
+}
+
+.library {
+    display: none;
+    margin: auto;
+    width: 90%;
+    background-color: grey;
+    color: white;
+    text-align: center;
 }
 
 .library-list {
+    width: 100%;
+    margin: auto;
     list-style: none;
     padding: 0;
 }
@@ -40,10 +81,4 @@
 
 .library-art {
     height: 100%;
-}
-
-.add-to-playlist {
-    height: 80%;
-    margin-right: 0;
-    margin-left: auto;
 }
