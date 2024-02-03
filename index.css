@@ -19,6 +19,19 @@ header {
     height: 48px;
     width: 90%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.to-songs {
+    display: flex;
+    flex-direction: row;
+}
+
+.to-player {
+    display: flex;
+    flex-direction: row;
 }
 
 .player {
