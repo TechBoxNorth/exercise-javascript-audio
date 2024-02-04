@@ -3,6 +3,7 @@ let activeView = 'player';
 const audioPlayer = document.querySelector('.audio-player');
 const libraryList = document.querySelector('.library-list');
 const header = document.querySelector('header');
+const playerControls = document.querySelector('.player-controls');
 
 header.addEventListener('click', (e) => {
     if(e.target.closest('div').classList.contains('to-songs') && activeView === 'player'){
@@ -30,15 +31,15 @@ function showLibrary(){
     document.querySelector('.library').style.display = 'inherit';
 }
 
-showPlayer();
-
 // ------- create song library ---------------------
 function createLibraryListItem(i){
     let item = document.createElement('li');
     item.classList.add('library-item');
     item.innerHTML = `<img class="library-art" src="${songObjects[i].cover}" alt="">
-    <p>Song: ${songObjects[i].name}</p>
-    <p>Artist: ${songObjects[i].artist}</p>`;
+    <div class="item-info">
+        <p>Song: ${songObjects[i].name}</p>
+        <p>Artist: ${songObjects[i].artist}</p>
+    </div`;
     item.id = songObjects[i].id - 1;
     libraryList.appendChild(item);
 }
@@ -46,6 +47,10 @@ function createLibraryListItem(i){
 for(let i = 0; i < songObjects.length; i++){
     createLibraryListItem(i);
 }
+
+playerControls.addEventListener('click', (e) => {
+    console.log(e.target.closest('img'));
+});
 
 libraryList.addEventListener('click', (e) => {
     const listItem = e.target.closest('.library-item')

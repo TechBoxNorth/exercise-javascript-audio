@@ -7,15 +7,14 @@
 .app-container {
     width: 100%;
     max-width: 700px;
+    height: 900px;
     margin: auto;
     margin-top: 30px;
-    background: black;
-    border-radius: 18px;
-    padding: 32px 0;
+    padding-bottom: 32px;
+    background-color: darkgray;
 }
 
 header {
-    background-color: gray;
     height: 48px;
     width: 90%;
     margin: 0 auto;
@@ -29,6 +28,7 @@ header {
 }
 
 .to-songs {
+    display: inherit;
     margin-left: 0;
     margin-right: auto;
     display: flex;
@@ -36,6 +36,7 @@ header {
 }
 
 .to-player {
+    display: none;
     margin-right: 0;
     margin-left: auto;
     display: flex;
@@ -45,11 +46,16 @@ header {
 .player {
     display: inherit ;
     margin: auto;
+    padding: 32px 0;
     width: 90%;
+    height: 70%;
     background-color: grey;
     color: white;
     text-align: center;
-    padding: 32px;
+}
+
+.player-art {
+    width: 60%;
 }
 
 .player-controls {
@@ -99,16 +105,18 @@ header {
 }
 
 .library {
-    display: inherit;
+    display: none;
     margin: auto;
     width: 90%;
+    height: 70%;
+    padding: 32px 0;
     background-color: grey;
     color: white;
     text-align: center;
 }
 
 .library-list {
-    width: 100%;
+    width: 60%;
     margin: auto;
     list-style: none;
     padding: 0;
@@ -122,6 +130,13 @@ header {
     height: 70px;
     align-items: center;
     padding: 12px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: large;
 }
 
 .library-item:hover {
