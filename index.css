@@ -15,7 +15,7 @@
 }
 
 header {
-    background-color: aqua;
+    background-color: gray;
     height: 48px;
     width: 90%;
     margin: 0 auto;
@@ -24,12 +24,20 @@ header {
     justify-content: space-between;
 }
 
+.top-gui:hover {
+    cursor: pointer;
+}
+
 .to-songs {
+    margin-left: 0;
+    margin-right: auto;
     display: flex;
     flex-direction: row;
 }
 
 .to-player {
+    margin-right: 0;
+    margin-left: auto;
     display: flex;
     flex-direction: row;
 }
@@ -48,10 +56,38 @@ header {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
-    grid-template-rows: repeat(2, 50%);
-    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+}
+
+.song-duration {
+    width: 55%;
+    height: 20px;
+    margin: 10px auto;
+}
+
+.duration-bar {
+    width: 100%;
+    height: 8px;
+    margin: 8px auto;
+    background-color: gold;
+}
+
+.song-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.first-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-row {
+    width: 100%;
+    display: flex;
 }
 
 .player-controls img {
@@ -59,11 +95,11 @@ header {
 }
 
 .play-btn {
-    
+    height: 50px;
 }
 
 .library {
-    display: none;
+    display: inherit;
     margin: auto;
     width: 90%;
     background-color: grey;
