@@ -49,8 +49,29 @@ for(let i = 0; i < songObjects.length; i++){
 }
 
 playerControls.addEventListener('click', (e) => {
-    console.log(e.target.closest('img'));
+    const btnID = e.target.id;
+    console.log(btnID);
+    switch(btnID){
+        case 'play-btn':
+            pauseResume();
+            break;
+        default:
+            console.log('meh!');
+            break;
+    }   
 });
+
+function pauseResume(){
+    if(!audioPlayer.paused){
+        console.log('playing');
+        audioPlayer.pause();
+        document.getElementById('play-btn').src="assets/gui/pause_circle.svg";
+    } else if(audioPlayer.paused){
+        console.log('paused');
+        document.getElementById('play-btn').src="assets/gui/play_circle.svg";
+        audioPlayer.play();
+    }
+}
 
 libraryList.addEventListener('click', (e) => {
     const listItem = e.target.closest('.library-item')
@@ -59,3 +80,4 @@ libraryList.addEventListener('click', (e) => {
     audioPlayer.play();
 });
 
+showPlayer();
